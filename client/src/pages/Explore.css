@@ -1,0 +1,58 @@
+.explore-title {
+  margin-bottom: var(--space-2);
+}
+
+.explore-subtitle {
+  color: var(--white-50);
+  font-size: var(--font-base);
+  margin-bottom: var(--space-8);
+}
+
+.genre-card {
+  position: relative;
+  padding: var(--space-5);
+  border-radius: var(--radius-lg);
+  min-height: 120px;
+  cursor: pointer;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  transition: all var(--duration-base) var(--ease-out);
+  box-shadow: var(--shadow-md);
+}
+
+.genre-card.active {
+  ring: 2px solid var(--white);
+  box-shadow: var(--shadow-pink-lg);
+}
+
+.genre-card-name {
+  font-size: var(--font-md);
+  font-weight: 700;
+  color: var(--white);
+  position: relative;
+  z-index: 1;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+.genre-card-img {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  transform: rotate(15deg);
+  opacity: 0.4;
+  transition: opacity var(--duration-base);
+}
+
+.genre-card:hover .genre-card-img {
+  opacity: 0.6;
+}
+
+.genre-card-skeleton {
+  min-height: 120px;
+  border-radius: var(--radius-lg);
+}

@@ -1,0 +1,92 @@
+/* ── Track Row enhanced ── */
+
+.track-row-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.track-row-like {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white-30);
+  opacity: 0;
+  transition: all var(--duration-base) var(--ease-out);
+}
+
+.track-row:hover .track-row-like,
+.track-row-like.liked {
+  opacity: 1;
+}
+
+.track-row-like:hover {
+  color: var(--pink-500);
+  transform: scale(1.2);
+}
+
+.track-row-like.liked {
+  color: var(--pink-500);
+}
+
+.track-row-like.liked svg {
+  fill: var(--pink-500);
+}
+
+.track-row-more {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white-30);
+  opacity: 0;
+  transition: all var(--duration-base) var(--ease-out);
+}
+
+.track-row:hover .track-row-more {
+  opacity: 1;
+}
+
+.track-row-more:hover {
+  color: var(--white);
+  background: var(--glass-bg-hover);
+}
+
+.track-menu-wrapper {
+  position: relative;
+}
+
+/* Music wave animation */
+.music-waves {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 2px;
+  height: 16px;
+}
+
+.music-waves span {
+  width: 3px;
+  background: var(--pink-500);
+  border-radius: 2px;
+  animation: musicWave 0.8s ease-in-out infinite;
+}
+
+.music-waves span:nth-child(1) { animation-delay: 0ms; height: 8px; }
+.music-waves span:nth-child(2) { animation-delay: 200ms; height: 14px; }
+.music-waves span:nth-child(3) { animation-delay: 400ms; height: 6px; }
+
+/* Responsive overrides */
+@media (max-width: 768px) {
+  .track-row-like {
+    display: none;
+  }
+  .track-row-more {
+    opacity: 1;
+  }
+}

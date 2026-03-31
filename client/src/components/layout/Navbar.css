@@ -1,0 +1,201 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--navbar-height);
+  background: rgba(6, 10, 24, 0.85);
+  backdrop-filter: var(--glass-blur-strong);
+  -webkit-backdrop-filter: var(--glass-blur-strong);
+  border-bottom: 1px solid var(--glass-border);
+  z-index: 100;
+}
+
+.navbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  padding: 0 var(--space-6);
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.navbar-logo {
+  font-size: var(--font-xl);
+  font-weight: 800;
+  background: var(--gradient-pink);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.5px;
+  transition: opacity var(--duration-fast);
+}
+
+.navbar-logo:hover {
+  opacity: 0.85;
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.navbar-link {
+  padding: var(--space-2) var(--space-4);
+  font-size: var(--font-sm);
+  font-weight: 500;
+  color: var(--white-50);
+  border-radius: var(--radius-full);
+  transition: all var(--duration-base) var(--ease-out);
+}
+
+.navbar-link:hover {
+  color: var(--white);
+  background: var(--glass-bg);
+}
+
+.navbar-link.active {
+  color: var(--white);
+  background: var(--glass-bg-hover);
+}
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.navbar-action-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white-50);
+  font-size: 1.1rem;
+  transition: all var(--duration-base) var(--ease-out);
+}
+
+.navbar-action-btn:hover {
+  color: var(--white);
+  background: var(--glass-bg-hover);
+}
+
+/* ── Login Button ── */
+.navbar-login-btn {
+  padding: var(--space-2) var(--space-5);
+  font-size: var(--font-sm);
+  font-weight: 600;
+  color: var(--white);
+  background: var(--gradient-pink);
+  border-radius: var(--radius-full);
+  transition: all var(--duration-base) var(--ease-out);
+  box-shadow: var(--shadow-pink);
+}
+
+.navbar-login-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-pink-lg);
+}
+
+/* ── User Menu ── */
+.navbar-user-wrapper {
+  position: relative;
+}
+
+.navbar-user-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white-50);
+  font-size: 1.1rem;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  transition: all var(--duration-base) var(--ease-out);
+}
+
+.navbar-user-btn:hover {
+  border-color: var(--glass-border-hover);
+}
+
+.navbar-avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.navbar-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  min-width: 200px;
+  background: rgba(11, 16, 38, 0.97);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid var(--glass-border-hover);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-xl);
+  padding: var(--space-2) 0;
+  animation: scaleIn 0.15s var(--ease-out) both;
+  z-index: 200;
+}
+
+.navbar-dropdown-header {
+  padding: var(--space-3) var(--space-4);
+}
+
+.navbar-dropdown-name {
+  font-size: var(--font-sm);
+  font-weight: 600;
+  color: var(--white);
+}
+
+.navbar-dropdown-email {
+  font-size: var(--font-xs);
+  color: var(--white-50);
+  margin-top: 2px;
+}
+
+.navbar-dropdown-divider {
+  height: 1px;
+  background: var(--glass-border);
+  margin: var(--space-1) 0;
+}
+
+.navbar-dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  width: 100%;
+  padding: var(--space-2) var(--space-4);
+  font-size: var(--font-sm);
+  color: var(--white-70);
+  transition: all var(--duration-fast);
+  text-align: left;
+}
+
+.navbar-dropdown-item:hover {
+  background: var(--glass-bg-hover);
+  color: var(--white);
+}
+
+.navbar-dropdown-logout:hover {
+  color: #EF4444;
+}
+
+/* ── Mobile ── */
+@media (max-width: 768px) {
+  .navbar-links {
+    display: none;
+  }
+  .navbar-inner {
+    padding: 0 var(--space-4);
+  }
+}

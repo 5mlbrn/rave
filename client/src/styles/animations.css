@@ -1,0 +1,168 @@
+/* ═══════════════════════════════════════════
+   ANIMATION KEYFRAMES
+   ═══════════════════════════════════════════ */
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes pulsePink {
+  0%, 100% {
+    box-shadow: 0 0 8px rgba(255, 45, 120, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 24px rgba(255, 45, 120, 0.6);
+  }
+}
+
+@keyframes vinylSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes musicWave {
+  0%, 100% { height: 4px; }
+  50% { height: 16px; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes progressGlow {
+  0% { box-shadow: 0 0 4px rgba(255, 45, 120, 0.2); }
+  50% { box-shadow: 0 0 12px rgba(255, 45, 120, 0.5); }
+  100% { box-shadow: 0 0 4px rgba(255, 45, 120, 0.2); }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bgPan {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ═══════════════════════════════════════════
+   UTILITY ANIMATION CLASSES
+   ═══════════════════════════════════════════ */
+
+.animate-fade-in {
+  animation: fadeIn var(--duration-base) var(--ease-out) both;
+}
+
+.animate-fade-up {
+  animation: fadeUp var(--duration-slow) var(--ease-out) both;
+}
+
+.animate-slide-left {
+  animation: slideInLeft var(--duration-slow) var(--ease-out) both;
+}
+
+.animate-slide-right {
+  animation: slideInRight var(--duration-slow) var(--ease-out) both;
+}
+
+.animate-scale-in {
+  animation: scaleIn var(--duration-base) var(--ease-out) both;
+}
+
+.animate-shimmer {
+  background: linear-gradient(
+    90deg,
+    var(--navy-700) 25%,
+    var(--navy-500) 50%,
+    var(--navy-700) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.8s ease-in-out infinite;
+}
+
+.stagger-1 { animation-delay: 50ms; }
+.stagger-2 { animation-delay: 100ms; }
+.stagger-3 { animation-delay: 150ms; }
+.stagger-4 { animation-delay: 200ms; }
+.stagger-5 { animation-delay: 250ms; }
+.stagger-6 { animation-delay: 300ms; }
+.stagger-7 { animation-delay: 350ms; }
+.stagger-8 { animation-delay: 400ms; }
