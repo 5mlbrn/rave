@@ -1,0 +1,255 @@
+/* ── Overlay ── */
+.track-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(6, 10, 24, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-5);
+}
+
+/* ── Modal Card ── */
+.track-modal {
+  position: relative;
+  background: var(--navy-700);
+  border: 1px solid var(--glass-border-hover);
+  border-radius: var(--radius-2xl);
+  width: 100%;
+  max-width: 440px;
+  overflow: hidden;
+  box-shadow: 0 32px 80px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255,255,255,0.04);
+}
+
+/* ── Close Button ── */
+.track-modal-close {
+  position: absolute;
+  top: var(--space-4);
+  right: var(--space-4);
+  z-index: 10;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.45);
+  border: 1px solid var(--glass-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white-70);
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background var(--duration-fast), color var(--duration-fast);
+  backdrop-filter: blur(8px);
+}
+
+.track-modal-close:hover {
+  background: rgba(255, 45, 120, 0.2);
+  color: var(--white);
+  border-color: rgba(255, 45, 120, 0.4);
+}
+
+/* ── Album Art ── */
+.track-modal-art-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  overflow: hidden;
+}
+
+.track-modal-art {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform var(--duration-slow) var(--ease-out);
+}
+
+.track-modal:hover .track-modal-art {
+  transform: scale(1.03);
+}
+
+.track-modal-art-blur {
+  position: absolute;
+  inset: -20px;
+  background-size: cover;
+  background-position: center;
+  filter: blur(30px) brightness(0.4);
+  z-index: 1;
+  opacity: 0.6;
+}
+
+/* ── Info Section ── */
+.track-modal-info {
+  padding: var(--space-6) var(--space-8) var(--space-8);
+}
+
+.track-modal-meta {
+  margin-bottom: var(--space-2);
+}
+
+.track-modal-album-label {
+  font-size: var(--font-xs);
+  font-weight: 600;
+  color: var(--pink-400);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.track-modal-title {
+  font-size: 1.55rem;
+  font-weight: 800;
+  color: var(--white);
+  margin: 0 0 var(--space-2);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.track-modal-artist {
+  font-size: var(--font-base);
+  color: var(--white-50);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color var(--duration-fast);
+  display: inline-block;
+}
+
+.track-modal-artist:hover {
+  color: var(--white-90);
+}
+
+/* ── Stats ── */
+.track-modal-stats {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.track-modal-stat {
+  font-size: var(--font-xs);
+  color: var(--white-30);
+  background: var(--white-05);
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  font-weight: 500;
+}
+
+.track-modal-explicit {
+  background: rgba(255, 45, 120, 0.15);
+  color: var(--pink-400);
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  border: 1px solid rgba(255, 45, 120, 0.2);
+}
+
+/* ── Controls ── */
+.track-modal-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-5);
+  margin-top: var(--space-7);
+}
+
+.track-modal-play-btn {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--gradient-pink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  font-size: 1.5rem;
+  cursor: pointer;
+  border: none;
+  box-shadow: var(--shadow-pink-lg);
+  transition: transform var(--duration-base) var(--ease-spring),
+    box-shadow var(--duration-base) var(--ease-out);
+}
+
+.track-modal-play-btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 8px 32px rgba(255, 45, 120, 0.55);
+}
+
+.track-modal-play-btn:active {
+  transform: scale(0.94);
+}
+
+.track-modal-btn-secondary {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: var(--white-05);
+  border: 1px solid var(--glass-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white-50);
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background var(--duration-fast), color var(--duration-fast),
+    border-color var(--duration-fast);
+}
+
+.track-modal-btn-secondary:hover {
+  background: var(--glass-bg-hover);
+  color: var(--white);
+  border-color: var(--glass-border-hover);
+}
+
+/* ── Album Link ── */
+.track-modal-album-link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: var(--space-6);
+  font-size: var(--font-xs);
+  color: var(--white-30);
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  justify-content: center;
+  transition: color var(--duration-fast);
+}
+
+.track-modal-album-link:hover {
+  color: var(--white-70);
+}
+
+/* ── Responsive ── */
+@media (max-width: 480px) {
+  .track-modal {
+    max-width: 100%;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: var(--radius-2xl) var(--radius-2xl) 0 0;
+  }
+
+  .track-modal-overlay {
+    align-items: flex-end;
+    padding: 0;
+  }
+
+  .track-modal-art-wrap {
+    aspect-ratio: 16/9;
+  }
+
+  .track-modal-info {
+    padding: var(--space-5) var(--space-6) var(--space-8);
+  }
+}

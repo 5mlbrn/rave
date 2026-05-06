@@ -394,5 +394,5 @@ app.get('/api/recommendations', async (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`\n  🎵 Yve API Server running on http://localhost:${PORT}\n`);
+  console.log(`\n  🎵 Rave API Server running on http://localhost:${PORT}\n`);
 });

@@ -1,5 +1,5 @@
 import { NavLink, useLocation } from 'react-router-dom';
-import { FiHome, FiCompass, FiSearch, FiHeart, FiClock, FiPlus, FiMusic, FiStar } from 'react-icons/fi';
+import { FiHome, FiCompass, FiSearch, FiHeart, FiClock, FiPlus, FiMusic, FiStar, FiInfo } from 'react-icons/fi';
 import { getPlaylists, createPlaylist } from '../../utils/helpers';
 import { useState, useEffect } from 'react';
 import './Sidebar.css';
@@ -91,6 +91,19 @@ export default function Sidebar() {
             <div className="sidebar-empty">No playlists yet</div>
           )}
         </div>
+      </div>
+
+      <div className="sidebar-divider" />
+
+
+      <div className="sidebar-section">
+        <NavLink
+          to="/about"
+          className={({ isActive }) => `sidebar-link ${isActive ? 'active' : ''}`}
+        >
+          <FiInfo className="sidebar-icon" />
+          <span className="sidebar-text">About Us</span>
+        </NavLink>
       </div>
     </aside>
   );

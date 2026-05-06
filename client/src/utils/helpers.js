@@ -23,9 +23,9 @@ export const truncate = (str, len = 28) => {
 
 // localStorage helpers
 const STORAGE_KEYS = {
-  LIKED: 'yve_liked_songs',
-  HISTORY: 'yve_history',
-  PLAYLISTS: 'yve_playlists',
+  LIKED: 'rave_liked_songs',
+  HISTORY: 'rave_history',
+  PLAYLISTS: 'rave_playlists',
 };
 
 export const getLikedSongs = () => {

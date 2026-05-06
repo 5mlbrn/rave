@@ -51,7 +51,7 @@ export default function Auth() {
       }
       const result = signup(form.name, form.email, form.password);
       if (result.success) {
-        toast.success(`Welcome to Yve, ${result.user.name}!`);
+        toast.success(`Welcome to Rave, ${result.user.name}!`);
         navigate('/');
       } else {
         toast.error(result.error);
@@ -84,7 +84,7 @@ export default function Auth() {
             <div className="auth-logo-icon">
               <FiMusic />
             </div>
-            <span className="auth-logo-text">Yve</span>
+            <span className="auth-logo-text">Rave</span>
           </div>
           <h1 className="auth-headline">
             Your music,<br />
@@ -136,7 +136,7 @@ export default function Auth() {
                 <p className="auth-card-subtitle">
                   {isLogin
                     ? 'Sign in to continue your music journey'
-                    : 'Join Yve and start listening today'}
+                    : 'Join Rave and start listening today'}
                 </p>
 
                 <form className="auth-form" onSubmit={handleSubmit}>

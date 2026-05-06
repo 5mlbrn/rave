@@ -13,6 +13,7 @@ import SearchPage from './pages/Search';
 import Dashboard from './pages/Dashboard';
 import Auth from './pages/Auth';
 import Recommendations from './pages/Recommendations';
+import About from './pages/About';
 import { Toaster } from 'react-hot-toast';
 
 export default function App() {
@@ -38,6 +39,7 @@ export default function App() {
                   <Route path="/library/:section/:playlistId" element={<Dashboard />} />
                   <Route path="/login" element={<Auth />} />
                   <Route path="/for-you" element={<Recommendations />} />
+                  <Route path="/about" element={<About />} />
                 </Routes>
               </AnimatePresence>
             </main>

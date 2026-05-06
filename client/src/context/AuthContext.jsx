@@ -2,7 +2,7 @@ import { createContext, useContext, useState, useCallback, useEffect } from 'rea
 
 const AuthContext = createContext(null);
 
-const STORAGE_KEY = 'yve_auth_user';
+const STORAGE_KEY = 'rave_auth_user';
 
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(() => {
@@ -22,7 +22,7 @@ export function AuthProvider({ children }) {
 
   const login = useCallback((email, password) => {
     // Check if user exists in localStorage users list
-    const users = JSON.parse(localStorage.getItem('yve_users') || '[]');
+    const users = JSON.parse(localStorage.getItem('rave_users') || '[]');
     const found = users.find(u => u.email === email && u.password === password);
     if (found) {
       const userData = { id: found.id, name: found.name, email: found.email, avatar: found.avatar };
@@ -33,7 +33,7 @@ export function AuthProvider({ children }) {
   }, []);
 
   const signup = useCallback((name, email, password) => {
-    const users = JSON.parse(localStorage.getItem('yve_users') || '[]');
+    const users = JSON.parse(localStorage.getItem('rave_users') || '[]');
     if (users.find(u => u.email === email)) {
       return { success: false, error: 'Email already exists' };
     }
@@ -46,7 +46,7 @@ export function AuthProvider({ children }) {
       createdAt: Date.now(),
     };
     users.push(newUser);
-    localStorage.setItem('yve_users', JSON.stringify(users));
+    localStorage.setItem('rave_users', JSON.stringify(users));
     const userData = { id: newUser.id, name: newUser.name, email: newUser.email, avatar: newUser.avatar };
     setUser(userData);
     return { success: true, user: userData };

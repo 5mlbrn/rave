@@ -14,13 +14,14 @@ export default function Navbar() {
     { to: '/explore', label: 'Browse' },
     { to: '/for-you', label: 'For You' },
     { to: '/library', label: 'Library' },
+    { to: '/about', label: 'About' },
   ];
 
   return (
     <nav className="navbar" id="navbar">
       <div className="navbar-inner">
         <Link to="/" className="navbar-logo">
-          Yve
+          Rave
         </Link>
 
         <div className="navbar-links">
